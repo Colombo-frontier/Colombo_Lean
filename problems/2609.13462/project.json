@@ -5,7 +5,7 @@
   "lake_project": "example_audits/monotone_vi/lean_project",
   "lean_toolchain": "leanprover/lean4:v4.32.1",
   "source_files": {
-    "example_audits/monotone_vi/lean_project/Check.lean": "fbc42571a19c93f8b791033e7a1cbefe166d6f4f2089cc8e276caa9a9904d3c3",
+    "example_audits/monotone_vi/lean_project/Check.lean": "169f193ac46df180203eaadefc48d009cd7b34369493729ca34d36bec8572596",
     "example_audits/monotone_vi/lean_project/LeanArticleAudit/Claims.lean": "52885aafc7f413e22ac69ad958e1f65231bb4cb684d790ae24d99d5a52b3d9f8",
     "example_audits/monotone_vi/lean_project/LeanArticleAudit/Pilot/AdmissibleOracle.lean": "1d2aa60bf0af49e73f90ff521618d36108a0ef126ac9650a0b76edf6a877547a",
     "example_audits/monotone_vi/lean_project/LeanArticleAudit/Pilot/ApproxRecovery.lean": "540c90c295a95c690b2694adb4e60a27045a386c7baaef32ff003053e3cb6bbe",

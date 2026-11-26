@@ -26,3 +26,12 @@ No check here certifies correspondence with an external manuscript. Statement-ch
 The verifier writes fresh logs and `proof/verification.json` for full runs, and `proof/static-verification.json` for static runs. Static-only success and full success are distinct. These generated files are ignored by Git. CI uploads the fresh results as artifacts and ties each run to a commit; the README badge shows workflow status rather than a perpetual correctness claim.
 
 Dependency version pins are required build inputs. Do not replace them with newer versions solely to obtain a successful build: dependency changes require review and fresh verification.
+
+## CI disk usage
+
+CI frees unrelated preinstalled SDKs on its disposable runner before installing
+Lean. GitHub caches contain only each project's `.lake/build`; dependency builds
+come from Mathlib's public cache. This avoids keeping a separate multi-gigabyte
+Mathlib checkout in every project cache. The largest source trees start first,
+with at most eight project jobs running concurrently. Every project still runs
+the full build and its configured audits.

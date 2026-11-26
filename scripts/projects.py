@@ -64,6 +64,13 @@ def main():
     except (ValueError, OSError) as error:
         parser.exit(1, f"{error}\n")
     if args.json:
+        # Start the largest source trees first so long builds do not sit behind
+        # many small packages in a bounded-parallelism CI matrix.
+        def source_bytes(project):
+            package = ROOT / project["path"]
+            return sum(safe_path(package, name).stat().st_size
+                       for name in load_metadata(package)["production_files"])
+        projects.sort(key=source_bytes, reverse=True)
         print(json.dumps({"include": projects}, separators=(",", ":")))
     else:
         for project in projects:

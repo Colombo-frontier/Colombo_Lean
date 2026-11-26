@@ -36,17 +36,31 @@ jobs:
     timeout-minutes: 240
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 8
       matrix: ${{ fromJSON(needs.sources.outputs.matrix) }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Restore pinned dependency and build cache
+      - name: Reserve runner disk space for Lean
+        shell: bash
+        run: |
+          df -h /
+          # These preinstalled SDKs are unrelated to this Lean/Python build.
+          # Paths are fixed and this job runs on a disposable GitHub runner.
+          for sdk in /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup; do
+            if [ -d "$sdk" ]; then
+              sudo rm -rf -- "$sdk"
+            fi
+          done
+          df -h /
+      - name: Restore pinned project build cache
         uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
         with:
-          path: ${{ matrix.lake_path }}/.lake
-          key: lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-${{ github.sha }}
+          # Mathlib supplies its own public compiled cache. Do not duplicate
+          # its multi-gigabyte dependency tree in every project cache.
+          path: ${{ matrix.lake_path }}/.lake/build
+          key: lean-project-v2-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-${{ github.sha }}
           restore-keys: |
-            lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-
+            lean-project-v2-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-
       - name: Install pinned Lean and fetch Mathlib
         uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
         with:
@@ -57,6 +71,12 @@ jobs:
           lint: 'false'
           use-mathlib-cache: 'auto'
           use-github-cache: 'false'
+      - name: Remove downloaded Mathlib cache archives
+        working-directory: ${{ matrix.lake_path }}
+        run: |
+          # Unpacked dependency modules stay in place for the Lean build.
+          lake exe cache clean!
+          df -h /
       - name: Build production modules and run Lean audits
         env:
           PROJECT: ${{ matrix.name }}
