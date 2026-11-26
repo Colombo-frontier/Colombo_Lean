@@ -1,0 +1,252 @@
+import NoisyZO.HardFamily
+import NoisyZO.SmoothCutoff
+import NoisyZO.HardHypercube
+import NoisyZO.HardMinimizer
+import NoisyZO.Model
+import NoisyZO.GradientHolder
+import NoisyZO.HardAdmissibility
+import NoisyZO.HardCenterGeometry
+import NoisyZO.HardQuantitativeCertificate
+import NoisyZO.HardPerturbation
+import NoisyZO.RadialProfile
+import NoisyZO.RadialProfileBounds
+import NoisyZO.RadialProfileUniformBounds
+import NoisyZO.GaussianKL
+import NoisyZO.GaussianKernel
+import NoisyZO.GaussianTranscript
+import NoisyZO.GaussianAdaptiveSum
+import NoisyZO.GaussianAssouad
+import NoisyZO.HardGaussianLower
+import NoisyZO.AdaptiveKLSum
+import NoisyZO.AssouadReduction
+import NoisyZO.AssouadDecision
+import NoisyZO.AssouadTesting
+import NoisyZO.BinaryPinsker
+import NoisyZO.EventPinsker
+import NoisyZO.LowerAssembly
+import NoisyZO.LowerConstants
+import NoisyZO.SGDTelescope
+import NoisyZO.ProjectedSGDStep
+import NoisyZO.ProjectedSGDExpectation
+import NoisyZO.WeightedAverage
+import NoisyZO.BetaFour
+import NoisyZO.LagrangeWeights
+import NoisyZO.MultiscaleBias
+import NoisyZO.VectorTaylor
+import NoisyZO.SymmetricTaylor
+import NoisyZO.UniformMeasures
+import NoisyZO.BallTaylor
+import NoisyZO.BetaFourBall
+import NoisyZO.SphereBallDivergence
+import NoisyZO.SphericalEstimator
+import NoisyZO.GaussianFourNoise
+import NoisyZO.BetaFourStep
+import NoisyZO.BetaFourLawStep
+import NoisyZO.BetaFourStateLaw
+import NoisyZO.BetaFourAlgorithm
+import NoisyZO.UnitBallProjection
+import NoisyZO.BetaFourProjectedAlgorithm
+import NoisyZO.BetaFourOutputLaw
+import NoisyZO.BetaFourUpper
+import NoisyZO.GeneralMultiscaleEstimator
+import NoisyZO.GeneralMultiscaleAlgorithm
+import NoisyZO.LowerRate
+import NoisyZO.LowerCore
+import NoisyZO.LowerDecisionCore
+import NoisyZO.LowerAlgorithmOutput
+import NoisyZO.LowerMinimaxBridge
+import NoisyZO.LowerConcreteMinimax
+import NoisyZO.SharpRate
+import NoisyZO.RateArithmetic
+import NoisyZO.QueryBudget
+import NoisyZO.Minimax
+import NoisyZO.ConcreteMain
+import NoisyZO.SubHolderBoundary
+
+/-!
+# Axiom audit
+
+Every theorem printed here should depend only on Lean/mathlib foundations
+(for example classical choice), never on a project-specific `axiom`.
+-/
+
+#print axioms NoisyZO.normalized_summed_neighbor_signal_le
+#print axioms NoisyZO.radialCutoff_contDiff
+#print axioms NoisyZO.normalized_summed_neighbor_signal_radialCutoff_le
+#print axioms NoisyZO.hardGaussianMean_signal_sum_le
+#print axioms NoisyZO.hardCenter_unique_minimizer
+#print axioms NoisyZO.NormalizedObjective.minimizer_is_unique
+#print axioms NoisyZO.NormalizedObjective.gradient_norm_le_nine
+#print axioms NoisyZO.NormalizedObjective.zero_gap_le_nine
+#print axioms NoisyZO.NormalizedObjective.gap_nonneg
+#print axioms NoisyZO.NormalizedObjective.gap_le_eighteen_of_norm_le
+#print axioms NoisyZO.NormalizedObjective.gradient_continuous
+#print axioms NoisyZO.NormalizedObjective.gradient_contDiff
+#print axioms NoisyZO.NormalizedObjective.gradient_higher_holder
+#print axioms NoisyZO.SmoothnessOrder.k_eq_three_of_beta_eq_four
+#print axioms NoisyZO.SmoothnessOrder.alpha_eq_one_of_beta_eq_four
+#print axioms NoisyZO.NormalizedObjective.convexOn_univ
+#print axioms NoisyZO.hardNormalizedObjective_exact_minimizer
+#print axioms NoisyZO.hardValue_radialCutoff_contDiff
+#print axioms NoisyZO.norm_hardCenter_hypercubeSign
+#print axioms NoisyZO.hardValue_radialCutoff_center_stationary
+#print axioms NoisyZO.rateHardCenter_geometry
+#print axioms NoisyZO.smoothCutoffProfile_contDiff
+#print axioms NoisyZO.smoothCutoffProfile_contDiff_infty
+#print axioms NoisyZO.norm_hypercubeDirection
+#print axioms NoisyZO.hardValue_radialCutoff_eq_scaled_profile
+#print axioms NoisyZO.iteratedFDeriv_hardPerturbation_radialCutoff
+#print axioms NoisyZO.hardValue_strong_of_perturbation
+#print axioms NoisyZO.hardValue_gradient_lipschitz_of_perturbation
+#print axioms NoisyZO.hardValue_higher_holder_of_perturbation
+#print axioms NoisyZO.radialHardQuantitativeCertificateOfUnitProfileSmall
+#print axioms NoisyZO.exists_uniform_unitRadialProfileCertificates
+#print axioms NoisyZO.exists_admissible_amplitude_and_unitProfileCertificates
+#print axioms NoisyZO.rateRadialHardAnalyticCertificate
+#print axioms NoisyZO.rateRadialHardObjective_minimizer
+#print axioms NoisyZO.klDiv_gaussianReal_one_toReal
+#print axioms NoisyZO.klDiv_gaussianReal_one
+#print axioms NoisyZO.gaussianReal_tilt_linear
+#print axioms NoisyZO.gaussianOracleKernel_kl_toReal
+#print axioms NoisyZO.klDiv_gaussianOracle_compProd_sameBase
+#print axioms NoisyZO.gaussianOracle_compProd_chainRule
+#print axioms NoisyZO.gaussianOracle_compProd_chainRule_toReal
+#print axioms NoisyZO.adaptiveGaussianLaw_kl_le
+#print axioms NoisyZO.adaptiveGaussianLaw_kl_ne_top
+#print axioms NoisyZO.adaptiveGaussianLaw_kl_toReal_le
+#print axioms NoisyZO.gaussian_conditional_KL_total_bound
+#print axioms NoisyZO.adaptive_gaussian_edge_KL_total_bound
+#print axioms NoisyZO.adaptive_gaussian_assouad_bound
+#print axioms NoisyZO.hardGaussianMean_edge_integrable
+#print axioms NoisyZO.hardAdaptiveGaussianLaw_edge_kl_ne_top
+#print axioms NoisyZO.hard_family_adaptive_gaussian_assouad_bound
+#print axioms NoisyZO.hard_family_adaptive_gaussian_three_eighths
+#print axioms NoisyZO.hard_family_average_loss_three_over_sixty_four
+#print axioms NoisyZO.lowerBandwidth_two_beta_le
+#print axioms NoisyZO.lowerBandwidth_KL_budget
+#print axioms NoisyZO.min_rate_le_lowerBandwidth_power
+#print axioms NoisyZO.lower_loss_rate
+#print axioms NoisyZO.hard_family_adaptive_gaussian_lower_rate
+#print axioms NoisyZO.assouadErrorProbability_edge
+#print axioms NoisyZO.NormalizedObjective.expected_hamming_to_gap
+#print axioms NoisyZO.two_sq_sub_le_binaryRelativeEntropy
+#print axioms NoisyZO.toReal_klDiv_bool_eq_binaryRelativeEntropy
+#print axioms NoisyZO.abs_probReal_sub_probReal_le_sqrt_klDiv
+#print axioms NoisyZO.hard_family_adaptive_gaussian_lower_rate_of_output_laws
+#print axioms NoisyZO.hardAdaptiveOutputLaw_isProbability
+#print axioms NoisyZO.hardAdaptiveOutputLaw_event_pinsker
+#print axioms NoisyZO.NormalizedObjective.hardAdaptiveOutputLaw_gap_integrable
+#print axioms NoisyZO.hard_family_adaptive_gaussian_lower_rate_of_algorithm_output
+#print axioms NoisyZO.radialHardObjectiveFamily_minimizer
+#print axioms NoisyZO.hard_family_adaptive_gaussian_lower_rate_of_radial_certificate
+#print axioms NoisyZO.lowerRateHardObjective_minimizer
+#print axioms NoisyZO.hard_family_adaptive_gaussian_lower_rate_of_quantitative_certificate
+#print axioms NoisyZO.exists_hypercube_risk_ge_average
+#print axioms NoisyZO.ofReal_le_minimaxRisk_of_average_hypercube
+#print axioms NoisyZO.lowerRateAlgorithmRisk_average
+#print axioms NoisyZO.lowerRate_le_concrete_minimaxRisk
+#print axioms NoisyZO.lowerRate_le_concrete_minimaxRisk_of_unit_profile
+#print axioms NoisyZO.exists_uniform_normalizedRadialProfile_deriv_bound
+#print axioms NoisyZO.exists_dimensionFree_unitRadialProfileCertificates
+#print axioms NoisyZO.exists_dimensionFree_admissible_amplitude_and_unitProfileCertificates
+#print axioms NoisyZO.lowerRate_le_concrete_minimaxRisk_dimension_free
+#print axioms NoisyZO.adaptive_KL_average_bound
+#print axioms NoisyZO.hamming_to_stronglyConvex_loss
+#print axioms NoisyZO.assouad_edge_pairing
+#print axioms NoisyZO.pinsker_average_sum_bound
+#print axioms NoisyZO.assouad_pinsker_bound
+#print axioms NoisyZO.adaptive_assouad_assembly
+#print axioms NoisyZO.KL_budget_le_one_eighth
+#print axioms NoisyZO.averaged_hamming_to_loss
+#print axioms NoisyZO.biased_sgd_weighted_sum
+#print axioms NoisyZO.biased_sgd_final_bound
+#print axioms NoisyZO.projected_biased_gradient_step
+#print axioms NoisyZO.projected_biased_gradient_step_expectation
+#print axioms NoisyZO.biased_sgd_final_bound_of_expected_steps
+#print axioms NoisyZO.NormalizedObjective.sgdWeightedAverage_gap_le
+#print axioms NoisyZO.NormalizedObjective.sgdWeightedAverage_final_bound
+#print axioms NoisyZO.betaFour_bias
+#print axioms NoisyZO.betaFour_secondMoment_envelope
+#print axioms NoisyZO.dyadic_weight_moment_cancellation
+#print axioms NoisyZO.multiscale_bias_bound
+#print axioms NoisyZO.vector_taylor_eq_sum_add_holderRemainder
+#print axioms NoisyZO.norm_holderTaylorRemainder_le
+#print axioms NoisyZO.norm_holderTaylorRemainder_two_le
+#print axioms NoisyZO.norm_holderTaylorRemainder_one_le
+#print axioms NoisyZO.firstOrderTaylor_lower_of_gradient_lipschitz
+#print axioms NoisyZO.integral_odd_eq_zero
+#print axioms NoisyZO.integral_scaled_multilinear_diagonal_eq_zero_of_odd
+#print axioms NoisyZO.norm_integral_holderTaylorRemainder_smul_le
+#print axioms NoisyZO.norm_integral_holderTaylorRemainder_two_smul_le
+#print axioms NoisyZO.uniformUnitBall_isCentrallySymmetric
+#print axioms NoisyZO.uniformUnitBall_norm_le_one
+#print axioms NoisyZO.NormalizedObjective.integrable_gradient_affine_uniformUnitBall
+#print axioms NoisyZO.uniformUnitBall_odd_taylor_term_eq_zero
+#print axioms NoisyZO.norm_uniformUnitBall_holderTaylorRemainder_smul_le
+#print axioms NoisyZO.uniformUnitSphere_norm_eq_one
+#print axioms NoisyZO.ballSmoothedField_eq_taylor_sum_add_remainder
+#print axioms NoisyZO.integral_ballTaylorTerm_eq_zero_of_odd
+#print axioms NoisyZO.ballSmoothedField_eq_secondOrder
+#print axioms NoisyZO.ballSmoothedField_eq_even_taylor_sum_add_remainder
+#print axioms NoisyZO.norm_ballTaylorRemainder_le
+#print axioms NoisyZO.norm_ballTaylorRemainder_two_le
+#print axioms NoisyZO.NormalizedObjective.ballSmoothedGradient_eq_even_taylor
+#print axioms NoisyZO.NormalizedObjective.norm_ballSmoothedGradient_remainder_le
+#print axioms NoisyZO.betaFourBallField_eq_value_add_remainders
+#print axioms NoisyZO.norm_betaFourBallField_sub_le
+#print axioms NoisyZO.NormalizedObjective.norm_betaFourBallField_sub_gradient_le
+#print axioms NoisyZO.integral_ball_gradient_eq_integral_toSphere_smul
+#print axioms NoisyZO.integral_uniformUnitSphere_dim_smul_eq_uniformUnitBall_gradient
+#print axioms NoisyZO.integral_centralDifferenceSignal_eq_ballSmoothedField
+#print axioms NoisyZO.integral_betaFourSphericalSignal_eq_betaFourBallField
+#print axioms NoisyZO.NormalizedObjective.abs_central_difference_le
+#print axioms NoisyZO.NormalizedObjective.norm_betaFourSphericalSignal_le
+#print axioms NoisyZO.integral_norm_betaFourSphericalNoise_sq_eq
+#print axioms NoisyZO.integral_betaFourNoiseScalar_sq_eq
+#print axioms NoisyZO.fourNoise_scalar_secondMoment
+#print axioms NoisyZO.integral_norm_betaFourGaussianNoise_sq_eq
+#print axioms NoisyZO.NormalizedObjective.integral_norm_betaFourGaussianEstimator_sq_le
+#print axioms NoisyZO.NormalizedObjective.betaFourGaussianEstimator_sq_integrable
+#print axioms NoisyZO.NormalizedObjective.betaFourGaussianEstimator_integrable
+#print axioms NoisyZO.NormalizedObjective.norm_integral_betaFourGaussianEstimator_sub_gradient_le
+#print axioms NoisyZO.NormalizedObjective.betaFourGaussian_projected_step
+#print axioms NoisyZO.NormalizedObjective.betaFourGaussian_law_step
+#print axioms NoisyZO.NormalizedObjective.betaFourStateLaw_recurrence
+#print axioms NoisyZO.NormalizedObjective.betaFourStateLaw_weighted_gap_le
+#print axioms NoisyZO.NormalizedObjective.betaFourStateLaw_balanced_rate
+#print axioms NoisyZO.norm_unitBallProjection_sub_le
+#print axioms NoisyZO.NormalizedObjective.betaFourProjectedStateLaw_balanced_rate
+#print axioms NoisyZO.betaFourOutputLaw_isProbability
+#print axioms NoisyZO.NormalizedObjective.integral_gap_betaFourOutputLaw
+#print axioms NoisyZO.NormalizedObjective.betaFourProjectedOutputLaw_balanced_rate
+#print axioms NoisyZO.betaFourProjectedBudgetOutputLaw_isProbability
+#print axioms NoisyZO.NormalizedObjective.betaFourProjectedOutputLaw_raw_budget_rate
+#print axioms NoisyZO.NormalizedObjective.betaFourProjectedBudgetOutputLaw_saturated_rate
+#print axioms NoisyZO.NormalizedObjective.integral_norm_betaFourSphericalEstimator_sq_le
+#print axioms NoisyZO.NormalizedObjective.norm_integral_betaFourSphericalEstimator_sub_gradient_le
+#print axioms NoisyZO.betaFour_balanced_tradeoff
+#print axioms NoisyZO.NormalizedObjective.betaFour_sgd_balanced_rate
+#print axioms NoisyZO.NormalizedObjective.betaFour_sgd_raw_budget_rate
+#print axioms NoisyZO.NormalizedObjective.betaFour_sgd_saturated_raw_budget_rate
+#print axioms NoisyZO.generalMultiscaleWeight_moment
+#print axioms NoisyZO.ballSmoothedField_eq_full_indexed
+#print axioms NoisyZO.NormalizedObjective.norm_fullMultiscaleBallField_sub_gradient_le
+#print axioms NoisyZO.integral_fullMultiscaleSphericalSignal_eq_ballField
+#print axioms NoisyZO.NormalizedObjective.integral_norm_fullMultiscaleSphericalEstimator_sq_le
+#print axioms NoisyZO.NormalizedObjective.norm_integral_fullMultiscaleSphericalEstimator_sub_gradient_le
+#print axioms NoisyZO.NormalizedObjective.fullMultiscaleSphericalEstimator_sq_integrable
+#print axioms NoisyZO.NormalizedObjective.fullMultiscaleGaussian_projected_step
+#print axioms NoisyZO.NormalizedObjective.fullMultiscaleStateLaw_balanced_rate
+#print axioms NoisyZO.NormalizedObjective.fullMultiscaleProjectedOutputLaw_balanced_rate
+#print axioms NoisyZO.fullMultiscaleProjectedBudgetOutputLaw_isProbability
+#print axioms NoisyZO.NormalizedObjective.fullMultiscaleProjectedBudgetOutputLaw_saturated_rate
+#print axioms NoisyZO.balanced_bias_exponent
+#print axioms NoisyZO.balanced_variance_exponent
+#print axioms NoisyZO.balanced_tradeoff
+#print axioms NoisyZO.rate_threshold_iff
+#print axioms NoisyZO.dimension_ratio_scheduled_le
+#print axioms NoisyZO.minimaxRisk_between
+#print axioms NoisyZO.minimaxRisk_eq
+#print axioms NoisyZO.sharp_minimax_rate_of_certificates
+#print axioms NoisyZO.normalized_sharp_rate_components
+#print axioms NoisyZO.no_global_stronglyConvex_subHolder

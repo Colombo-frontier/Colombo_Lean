@@ -1,0 +1,20 @@
+import LeanArticleAudit
+
+#print axioms MinimaxAudit.admissible_scalar_iff
+#print axioms MinimaxAudit.borel_deterministic_policy_source
+#print axioms MinimaxAudit.revised_randomized_definition_full
+#print axioms MinimaxAudit.criteria_source
+#print axioms MinimaxAudit.revised_main_lower_source
+#print axioms MinimaxAudit.BorelScalarUpper.prop_upper_borel_source
+#print axioms MinimaxAudit.complexity_corollary_source
+#print axioms MinimaxAudit.gate_properties_source
+#print axioms MinimaxAudit.admissibility_source
+#print axioms MinimaxAudit.saddlepoint_source
+#print axioms MinimaxAudit.ideal_residual_source
+#print axioms MinimaxAudit.ideal_gap_witness_source
+#print axioms MinimaxAudit.uniform_approximation_source
+#print axioms MinimaxAudit.source_scalar_residual_lower
+#print axioms MinimaxAudit.source_tangent_residual_lower
+#print axioms MinimaxAudit.source_product_gap_lower
+#print axioms MinimaxAudit.OnlineTranscript.deterministic_transcript_source
+#print axioms MinimaxAudit.HaarSource.adaptive_haar_source

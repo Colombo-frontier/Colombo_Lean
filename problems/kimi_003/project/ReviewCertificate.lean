@@ -1,0 +1,43 @@
+import FullCorollaries
+import UpperGhostSourceMain
+import UpperGhostGoodIdentity
+import UpperGhostDisagreement
+import SphereSmoothingSamplewise
+import SphereSmoothingPaperConstants
+import SphereConcentrationMedianBound
+import HaarRebalancingRadius
+import AdaptiveSpherePosteriorAllRanks
+import AdaptiveSphereMeasurementProjection
+import AdaptiveSphereIndependentFeedback
+import AdaptiveSphereOriginalEnergy
+import AdaptiveSphereExactDrift
+import AdaptiveSphereSourceEvent
+import AdaptiveSphereSourceRisk
+import AdaptiveSphereSourceSmall
+import HandlePriorIdentity
+import LowerRiskSharpArithmetic
+
+/-!
+The actual minimax proof and the standalone source auxiliaries are imported
+in one explicit certificate root. The source correspondence report records
+the exact semantic scope and the equivalent proof routes separately.
+-/
+
+#check Task006.Full.main_theorem
+#check Task006.Full.common_polynomial_envelope
+#check Task006.Full.diagonal_dimension_four
+#check Task006.Full.SampleInstance.source_upper_actual_error_lt
+#check Task006.SphereSmoothing.ballSmoothGradient_eq_haar
+#check Task006.Full.SampleInstance.ballSmooth_samplewise_hasGradient_haar
+#check Task006.SphereConcentration.median_bound_spherical_scale
+#check Task006.AdaptiveSphereOriginalEnergy.original_sphere_fiber_energy
+#check Task006.AdaptiveSphereSourceEvent.sourceHandleEvent_half_mass
+#check Task006.AdaptiveSphereSourceEvent.source_event_original_center_energy_le_ratio
+#check Task006.AdaptiveSphereSourceEvent.source_large_dimension_bayes_risk_gt_146
+#check Task006.AdaptiveSphereSourceEvent.zero_handle_conditional_mean
+#check Task006.AdaptiveSphereSourceEvent.source_small_dimension_bayes_risk_ge
+#check Task006.Full.OracleAlgorithm.expected_informativeHandles_prior_eq
+
+#print axioms Task006.Full.main_theorem
+#print axioms Task006.Full.SampleInstance.source_upper_actual_error_lt
+#print axioms Task006.AdaptiveSphereSourceEvent.source_large_dimension_bayes_risk_gt_146

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "name": "kimi_002",
+  "title": "Deterministic Full-History Acceleration with Exact Comparison Feedback",
+  "lake_project": "project",
+  "lean_toolchain": "leanprover/lean4:v4.32.1",
+  "source_files": {
+    "project/Main.lean": "0d87a156bbc9a11e37c4719ad223df35e4b829435b4eeb880b65cad3593c70f3",
+    "proof/Audit.lean": "d0c6c8049d59cb98794aac2ed254c1b32f50bd2f599fddbda304525335c35cdb",
+    "proof/SourceAudit.lean": "4f33462a226759c3250c3d20c9a5506e19923bc8449894ae83b0555cbdc82d1a"
+  },
+  "production_files": [
+    "project/Main.lean"
+  ],
+  "audit_files": [
+    "proof/Audit.lean",
+    "proof/SourceAudit.lean"
+  ],
+  "config_files": {
+    "project/lean-toolchain": "8e3538e0ab5f81a3ee04927d8838c8c674e0e112838b4b3ce87ec218143276af",
+    "project/lakefile.toml": "1226eb635ba3ee91b4792dc099287c85f38e6e4fd514a945d0dd50f7addc8387",
+    "project/lake-manifest.json": "7f703e0c90d2bb20cbe3752b9ea110e56326d9158a14846ed4915493732c878c",
+    "proof/declarations.json": "7642342e4b6e638ff019c45a70e8f07ba8be2d77ee5208126976b1fbdd682f33"
+  },
+  "build_targets": [
+    "Main"
+  ]
+}

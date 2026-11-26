@@ -1,0 +1,8 @@
+* text=auto eol=lf
+# Preserve proof bytes exactly; project inventories hash their original bytes.
+*.lean -text
+*.md text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.yml text eol=lf

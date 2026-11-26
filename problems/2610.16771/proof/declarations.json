@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "targets": [
+    {
+      "principal": "FangqingOriginalMainTheorem.original_main_three_phase_frontier",
+      "module": "PaperAudit.Frontier12"
+    },
+    {
+      "principal": "OriginalSaddleTransfer.exact_transfer_from_standing_joint",
+      "module": "PaperAudit.Frontier06"
+    },
+    {
+      "principal": "OriginalSaddleImplicit.square_root_sensitivity_from_standing_joint",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "OriginalEnvelopeRegularity.envelope_regularity_from_standing_joint",
+      "module": "PaperAudit.Frontier08"
+    },
+    {
+      "principal": "OriginalPrimalElimination.primal_elimination_from_standing_joint",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "OriginalDualCurvature.dual_curvature_from_standing_joint",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "OriginalDualOracleProgram.dual_oracle_from_standing_joint",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "FrozenAudit.gradient_enlargement",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "LargeStepAHPE.original_large_step_ahpe_blackbox",
+      "module": "PaperAudit.Frontier08"
+    },
+    {
+      "principal": "PaperAudit.CertifiedATS.CertifiedATSZeroTolerance.certified_ats_zero_sigma_refutation",
+      "module": "PaperAudit.CertifiedATS"
+    },
+    {
+      "principal": "OriginalActualDualCoupledSearch.coupled_search_with_actual_original_oracle",
+      "module": "PaperAudit.Frontier07"
+    },
+    {
+      "principal": "OriginalCertifiedCoupledAHPE.original_certified_step_actual_base_program",
+      "module": "PaperAudit.Frontier08"
+    },
+    {
+      "principal": "PaperAudit.RobustContraction.OriginalRobustContraction.original_robust_simulated_contraction",
+      "module": "PaperAudit.RobustContraction"
+    },
+    {
+      "principal": "PaperAudit.ConvexSecondOrder.OriginalGenericHessianFreeSecondOrder.original_convex_second_order_full_scope",
+      "module": "PaperAudit.ConvexSecondOrder"
+    },
+    {
+      "principal": "PaperAudit.OuterCounterexample.OriginalCubicSaddleEmbedding.original_outer_cubic_sum_full_saddle_counterexample",
+      "module": "PaperAudit.OuterCounterexample"
+    },
+    {
+      "principal": "OriginalEnvelopeOracleMinProgram.envelope_oracle_with_actual_minimum_warm_solver",
+      "module": "PaperAudit.Frontier09"
+    },
+    {
+      "principal": "PaperAudit.SingleLowerCounterexample.OriginalLiteralSingleLowerFullQuantifiers.no_original_literal_universal_constants",
+      "module": "PaperAudit.SingleLowerCounterexample"
+    },
+    {
+      "principal": "AllDerivativeLift.lift_from_F_class",
+      "module": "PaperAudit.Frontier06"
+    },
+    {
+      "principal": "FlatCubic.flat_cubic_halfline_all_items",
+      "module": "PaperAudit.Frontier01"
+    },
+    {
+      "principal": "PaperAudit.FenchelDistance.PacketCore.fenchel_transfer_finiteDimensional_from_C2_saddle",
+      "module": "PaperAudit.FenchelDistance"
+    },
+    {
+      "principal": "FangqingAdaptiveHaarExternal.arbitrary_external_sigma_complete",
+      "module": "PaperAudit.Frontier02"
+    },
+    {
+      "principal": "FangqingPrivateConstantHierarchy.actual_private_constant_hierarchy",
+      "module": "PaperAudit.Frontier04"
+    },
+    {
+      "principal": "FangqingAmplifier.amplifier_spectrum_complete",
+      "module": "PaperAudit.Frontier01"
+    },
+    {
+      "principal": "PaperAudit.PrivateHandlePacket.OriginalPrivateHandlePacketComplete.original_private_handle_packet_all_items",
+      "module": "PaperAudit.PrivateHandlePacket"
+    },
+    {
+      "principal": "HandleAlignment.private_handle_parameter_alignment",
+      "module": "PaperAudit.Frontier03"
+    },
+    {
+      "principal": "PaperAudit.PairedShell.OriginalAugmentedPairedShellComplete.original_handle_paired_shell_with_actual_augmented_execution",
+      "module": "PaperAudit.PairedShell"
+    },
+    {
+      "principal": "PaperAudit.FenchelPacket.OriginalPhysicalFenchelPacket.actual_low_gradient_fenchel_packet",
+      "module": "PaperAudit.FenchelPacket"
+    },
+    {
+      "principal": "FangqingRelayRegularityComplete.actual_relay_regularity_stationarity_initialization",
+      "module": "PaperAudit.Frontier03"
+    },
+    {
+      "principal": "FangqingRelayRegularityComplete.actual_relay_regularity_stationarity_initialization",
+      "module": "PaperAudit.Frontier03"
+    },
+    {
+      "principal": "PaperAudit.LateGateCounterexample.FangqingOriginalHierarchyLateGateRefutation.original_all_round_prefix_claim_is_refuted_by_same_budget_worlds",
+      "module": "PaperAudit.LateGateCounterexample"
+    },
+    {
+      "principal": "FangqingPrivateHandleFirstHitOriginalWorld.original_private_handle_first_hit",
+      "module": "PaperAudit.Frontier05"
+    },
+    {
+      "principal": "PaperAudit.HeterogeneousProduct.FangqingHeterogeneousCanonicalHierarchyProduct.closed_original_private_handle_product",
+      "module": "PaperAudit.HeterogeneousProduct"
+    },
+    {
+      "principal": "FangqingClosedOriginalLowerTheorems.original_private_handle_composition_closed",
+      "module": "PaperAudit.Frontier06"
+    },
+    {
+      "principal": "FangqingClosedOriginalLowerTheorems.original_complete_lower_closed",
+      "module": "PaperAudit.Frontier06"
+    },
+    {
+      "principal": "FangqingBorelWarmMinimum.admissible_minimum_warm_from_standing_joint",
+      "module": "PaperAudit.Frontier11"
+    },
+    {
+      "principal": "PaperAudit.WarmUniformCounterexample.OriginalWarmRandomizedUniformObstruction.no_uniform_finite_randomized_saddle_budget",
+      "module": "PaperAudit.WarmUniformCounterexample"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+name = "smoothness_2610_03638"
+version = "0.1.0"
+defaultTargets = ["Smoothness2601", "Bilevel"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "c44e0c8ee63ca166450922a373c7409c5d26b00b"
+
+[[lean_lib]]
+name = "Smoothness2601"
+
+[[lean_lib]]
+name = "Bilevel"

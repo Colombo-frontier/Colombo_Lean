@@ -1,0 +1,14 @@
+name = "matvec_2610_02095"
+version = "0.1.0"
+defaultTargets = ["Matvec", "LowRank"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "c44e0c8ee63ca166450922a373c7409c5d26b00b"
+
+[[lean_lib]]
+name = "Matvec"
+
+[[lean_lib]]
+name = "LowRank"

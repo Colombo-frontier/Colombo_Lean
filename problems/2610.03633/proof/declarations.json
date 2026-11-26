@@ -1,0 +1,1586 @@
+{
+  "schema_version": 1,
+  "claims": [
+    {
+      "id": "ass:primitive",
+      "declarations": [
+        "Bilevel.PolishedHistory.SourceMean",
+        "Bilevel.PrimitiveGeometry.FullPrimitive.toPrimitive",
+        "Bilevel.Model.Primitive.gapCertificate_iff_source",
+        "Bilevel.Model.Primitive.lower_solution_exists_unique",
+        "Bilevel.PolishedHistory.Instance"
+      ]
+    },
+    {
+      "id": "def:sfo",
+      "declarations": [
+        "Bilevel.PolishedHistory.QuerySourceExecution",
+        "Bilevel.PolishedHistory.QuerySourceExecution.IsConservative",
+        "Bilevel.PolishedHistory.queryPostComplexity",
+        "Bilevel.PolishedHistory.stationaryQueryExecution",
+        "Bilevel.PolishedHistory.SourceExperiment",
+        "Bilevel.PolishedHistory.conditional_centered_iff_unbiased",
+        "Bilevel.PolishedHistory.conditional_moments_coarsen",
+        "Bilevel.PolishedHistory.SourceExperiment.repairedKernel_represents",
+        "Bilevel.PolishedHistory.SourceExperiment.repaired_cost_eq_actual",
+        "Bilevel.PolishedHistory.SourceExperiment.compiled_terminal_risk_eq",
+        "Bilevel.PolishedHistory.stationary_actual_source_admissible",
+        "Bilevel.PolishedHistory.freshSourceCost_eq",
+        "Bilevel.PolishedHistory.freshSourceRisk_eq"
+      ]
+    },
+    {
+      "id": "thm:joint-noise-comparison",
+      "declarations": [
+        "Bilevel.PolishedHistory.uniform_query_source_comparison",
+        "Bilevel.PolishedHistory.uniform_positive_history_comparison",
+        "Bilevel.PolishedHistory.uniform_positive_history_both_lower",
+        "Bilevel.PolishedHistory.three_term_complexity_upper",
+        "Bilevel.PolishedHistory.source_frozen_body_normalized_upper"
+      ]
+    },
+    {
+      "id": "thm:main-upper-informal",
+      "declarations": [
+        "Bilevel.PolishedFrozenCode.algorithm",
+        "Bilevel.PolishedFrozenUpper.accuracy",
+        "Bilevel.PolishedFrozenProcedure.algorithm_cost_lintegral",
+        "Bilevel.PolishedFrozenCode.compiled_selectedAlgorithm_calls_rate_pointwise",
+        "Bilevel.PolishedFrozenProcedure.compiled_accuracy_and_cost",
+        "Bilevel.PolishedHistory.source_frozen_general_upper",
+        "Bilevel.PolishedHistory.source_frozen_general_dispatch_upper"
+      ]
+    },
+    {
+      "id": "cor:curvature-controlled",
+      "declarations": [
+        "Bilevel.PolishedHistory.curvature_query_source_comparison",
+        "Bilevel.PolishedHistory.positive_history_curvature_three_term_lower",
+        "Bilevel.CachedCurvatureRate.core_le_three_rates",
+        "Bilevel.PolishedHistory.Instance.source_frozen_curvature_upper",
+        "Bilevel.PolishedHistory.source_frozen_curvature_complexity_upper",
+        "Bilevel.PolishedFrozenUpper.accuracy",
+        "Bilevel.PolishedFrozenProcedure.algorithm_cost_lintegral"
+      ]
+    },
+    {
+      "id": "up:lem:estimator-geometry",
+      "declarations": [
+        "Bilevel.ChiResponseGeometry.response_lipschitz",
+        "Bilevel.ChiResponseGeometry.tilt_displacement",
+        "Bilevel.ChiResponseGeometry.tilt_stability",
+        "Bilevel.ChiResponseGeometry.estimator_stability",
+        "Bilevel.ChiResponseGeometry.estimator_bias",
+        "Bilevel.ChiResponseGeometry.zero_variation_exact",
+        "Bilevel.ChiResponseGeometry.hyperobjective_curvature",
+        "Bilevel.Model.Primitive.tilted_strong_convex"
+      ]
+    },
+    {
+      "id": "acc:lem:inner",
+      "declarations": [
+        "Bilevel.StatefulAccelerated.solveAfter_distance",
+        "Bilevel.StatefulAccelerated.solveAfter_calls",
+        "Bilevel.StatefulAccelerated.solveCalls_bound",
+        "Bilevel.AcceleratedInner.scheduled_calls_bound",
+        "Bilevel.OracleCode.denote_acceleratedSolve"
+      ]
+    },
+    {
+      "id": "cache:lem:confidence",
+      "declarations": [
+        "Bilevel.ConditionalConfidence.confidence_finite",
+        "Bilevel.StatefulConfidence.amplify_confidence",
+        "Bilevel.StatefulConfidence.amplify_calls",
+        "Bilevel.ConditionalConfidence.select"
+      ]
+    },
+    {
+      "id": "cache:lem:error",
+      "declarations": [
+        "Bilevel.Model.Primitive.cached_pointwise_accuracy",
+        "Bilevel.Model.Primitive.cached_anchor_error",
+        "Bilevel.CachedParameterChoice.estimator_error_budget"
+      ]
+    },
+    {
+      "id": "ac:thm:cached-upper",
+      "declarations": [
+        "Bilevel.PolishedFrozenUpper.accuracy",
+        "Bilevel.PolishedFrozenCode.compiled_selectedAlgorithm_calls_rate_pointwise",
+        "Bilevel.PolishedFrozenProcedure.compiled_accuracy_and_cost",
+        "Bilevel.PolishedHistory.source_frozen_general_upper",
+        "Bilevel.PolishedFrozenCode.History.denote_sourceSelectedAlgorithm",
+        "Bilevel.PolishedFrozenProcedure.source_compiled_accuracy_and_cost",
+        "Bilevel.PolishedHistory.Instance.source_frozen_normalized_upper",
+        "Bilevel.PolishedHistory.source_frozen_body_normalized_upper",
+        "Bilevel.PolishedHistory.source_frozen_general_dispatch_upper"
+      ]
+    },
+    {
+      "id": "thm:main",
+      "declarations": [
+        "Bilevel.PolishedHistory.positive_query_source_all_gap_curvature_lower",
+        "Bilevel.PolishedHistory.positive_history_all_gap_curvature_lower",
+        "Bilevel.ChiCurvatureLower.all_gap_curvature_class_hardness",
+        "Bilevel.ChiCurvatureLower.all_gap_curvature_class_minimax",
+        "Bilevel.PrimitiveQuery.Family.RateProperty",
+        "Bilevel.PolishedHistory.stationary_complexity_le_history"
+      ]
+    },
+    {
+      "id": "lem:selectors",
+      "declarations": [
+        "Bilevel.PolishedLiteral.AllJets.selector_all_orders_unique",
+        "Bilevel.PolishedLiteral.AllJets.residual_all_orders_unique",
+        "Bilevel.PolishedLiteral.AllJets.prescribed_order_one_active",
+        "Bilevel.PolishedLiteral.selector_uniform_jets",
+        "Bilevel.PolishedLiteral.selector_sqrt_derivative",
+        "Bilevel.PolishedLiteral.residualTerm_sqrt_derivative",
+        "Bilevel.PolishedLiteral.residual_jet_bounds",
+        "Bilevel.PolishedLiteral.AllJets.wrappedSelector_all_orders_unique",
+        "Bilevel.PolishedLiteral.AllJets.wrappedResidual_all_orders_unique"
+      ]
+    },
+    {
+      "id": "lem:macro-endgame",
+      "declarations": [
+        "Bilevel.PolishedLiteral.literal_macro_certificate"
+      ]
+    },
+    {
+      "id": "lem:micro",
+      "declarations": [
+        "Bilevel.PolishedLiteral.adjustable_literal_micro_certificate",
+        "Bilevel.PolishedLiteral.actual_mean_micro_certificate"
+      ]
+    },
+    {
+      "id": "thm:global",
+      "declarations": [
+        "Bilevel.PolishedLiteral.literal_global_certificate",
+        "Bilevel.PolishedLiteral.Parameters.outerMean_eq_actual_hyperobjective"
+      ]
+    },
+    {
+      "id": "hier:lem:upper-primitive",
+      "declarations": [
+        "Bilevel.PolishedLiteral.source_upper_primitive_budgets",
+        "Bilevel.PolishedLiteral.Parameters.upper_lower_gradient_bound"
+      ]
+    },
+    {
+      "id": "hier:thm:mean",
+      "declarations": [
+        "Bilevel.PolishedLiteral.literal_hierarchical_mean_certificate",
+        "Bilevel.PolishedLiteral.MeanCertificate"
+      ]
+    },
+    {
+      "id": "hier:lem:projection",
+      "declarations": [
+        "Bilevel.PolishedTwoFrameProjection.source_two_frame_projection",
+        "Bilevel.PolishedLiteralActualObserver.actual_two_frame_observed",
+        "Bilevel.PolishedLiteralActualObserver.literal_two_frame_observed"
+      ]
+    },
+    {
+      "id": "hier:lem:coupling",
+      "declarations": [
+        "Bilevel.PolishedLiteral.Parameters.actual_reply_eq_raw",
+        "Bilevel.PolishedLiteralActualObserver.actual_counter_reply",
+        "Bilevel.PolishedLiteralActualObserver.originalRun_eq_virtual",
+        "Bilevel.PolishedLiteralActualObserver.source_observed_blindBox",
+        "Bilevel.PolishedLiteralActualObserver.literal_source_coupling"
+      ]
+    },
+    {
+      "id": "hier:thm:conditional-lower",
+      "declarations": [
+        "Bilevel.PolishedLiteralActualObserver.conditional_fixed_horizon",
+        "Bilevel.PolishedLiteralActualObserver.conditional_expected_calls_from_dimensions",
+        "Bilevel.PolishedHierarchicalActivation.fixed_horizon_probability",
+        "Bilevel.PolishedHierarchicalActivation.fixed_instance_expected_calls"
+      ]
+    },
+    {
+      "id": "fb:lem:multiscale",
+      "declarations": [
+        "Bilevel.PolishedLiteral.literal_source_amplitude_multiscale_eta",
+        "Bilevel.PolishedLiteral.literal_source_amplitude_multiscale_eta_small"
+      ]
+    },
+    {
+      "id": "rec:lem:weighted-local",
+      "declarations": [
+        "Bilevel.ChiBoundedChain.source_uniform_eta_margins",
+        "Bilevel.ChiRecursive.exists_source_small_parameters",
+        "Bilevel.ChiBoundedChain.source_payload_amplitude",
+        "Bilevel.ChiBoundedChain.source_local_payload_jets",
+        "Bilevel.ChiBoundedChain.payload_source_jets"
+      ]
+    },
+    {
+      "id": "rec:lem:global",
+      "declarations": [
+        "Bilevel.ChiOuter.source_independent_objective_certificate",
+        "Bilevel.ChiOuter.source_outer_independent_barrier"
+      ]
+    },
+    {
+      "id": "rec:lem:carrier-jets",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.coarseFamily",
+        "Bilevel.ChiExtensionCalibration.source_coarse_family_ledger",
+        "Bilevel.ChiOuter.source_outer_selected_fine_ledger",
+        "Bilevel.ChiFine.source_flattening_error",
+        "Bilevel.ChiFine.source_flattening_derivative_bounds"
+      ]
+    },
+    {
+      "id": "chi:lem:fine",
+      "declarations": [
+        "Bilevel.ChiOuter.outerFinePiece_sum",
+        "Bilevel.ChiOuter.source_outer_coupling_jets",
+        "Bilevel.ZeroChainSchedule.final_width_bounds",
+        "Bilevel.ZeroChainSchedule.width_antitone"
+      ]
+    },
+    {
+      "id": "rec:lem:legendre",
+      "declarations": [
+        "Bilevel.PartialLegendre.jointConjugate_eq_supremum",
+        "Bilevel.PartialLegendre.source_jointConjugate_regular",
+        "Bilevel.PartialLegendre.actual_conjugate_hessian_bounds",
+        "Bilevel.PartialLegendre.jointNormalLower_unique_response",
+        "Bilevel.PartialLegendre.hybridLower_regular"
+      ]
+    },
+    {
+      "id": "rec:lem:radial",
+      "declarations": [
+        "Bilevel.PublicRadialExtension.radial_formula",
+        "Bilevel.PublicRadialExtension.radial_normal_trace_gradient",
+        "Bilevel.PublicRadialExtension.radial_tangential_gradient",
+        "Bilevel.PublicRadialExtension.radialCoefficient_bound",
+        "Bilevel.PublicRadialExtension.radial_jet_bounds"
+      ]
+    },
+    {
+      "id": "rec:lem:extension-budget",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.coarseFamily_normal_jets",
+        "Bilevel.ChiExtensionCalibration.source_coarse_extension_jets",
+        "Bilevel.ChiOuter.source_outer_coupling_jets",
+        "Bilevel.ChiExtension.radialTerm_jets"
+      ]
+    },
+    {
+      "id": "rec:lem:conjugate-envelope",
+      "declarations": [
+        "Bilevel.PartialLegendre.informative_gradient_bound",
+        "Bilevel.PartialLegendre.ConjugateOracle.sampleGradient_variance_bound"
+      ]
+    },
+    {
+      "id": "waG:lem:base",
+      "declarations": [
+        "Bilevel.ChiIndependentWidths.uniform_upper_base_certificate"
+      ]
+    },
+    {
+      "id": "waG:lem:floors",
+      "declarations": [
+        "Bilevel.ChiIndependentWidths.exists_uniform_width_calibration"
+      ]
+    },
+    {
+      "id": "waG:lem:margin",
+      "declarations": [
+        "Bilevel.ChiOuter.source_independent_objective_certificate",
+        "Bilevel.ChiExtensionCalibration.wide_deterministic_witness"
+      ]
+    },
+    {
+      "id": "waG:lem:budgets",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.wide_parameter_certificate",
+        "Bilevel.ChiExtensionCalibration.wide_hierarchy_extension_jets",
+        "Bilevel.ChiOuter.wide_primitive_certificate"
+      ]
+    },
+    {
+      "id": "waI:lem:hidden",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.independent_hidden_force",
+        "Bilevel.ChiExtensionCalibration.independent_hidden_gradient_force",
+        "Bilevel.ChiExtensionCalibration.independent_coarse_energy",
+        "Bilevel.ChiExtensionCalibration.depth_linear_coefficient_absorption"
+      ]
+    },
+    {
+      "id": "waI:lem:extension",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.wide_parameter_certificate",
+        "Bilevel.ChiExtensionCalibration.wide_inactive_extension_jets",
+        "Bilevel.ChiExtensionCalibration.wide_radial_jets",
+        "Bilevel.EndpointTransportResponse.wide_physical_uniform_core_witness"
+      ]
+    },
+    {
+      "id": "ni:lem:radial",
+      "declarations": [
+        "Bilevel.NearIdentityConfinement.exists_unit_transverse",
+        "Bilevel.NearIdentityConfinement.source_total_radial_coefficient_bound"
+      ]
+    },
+    {
+      "id": "ni:lem:source",
+      "declarations": [
+        "Bilevel.ChiOuter.active_inactive_latent_force_bound",
+        "Bilevel.ChiFine.latent_active_force_bound",
+        "Bilevel.ChiFine.latent_inactive_force_bound"
+      ]
+    },
+    {
+      "id": "ni:lem:no-cascade",
+      "declarations": [
+        "Bilevel.ChiOuter.hierarchy_homotopy_blind",
+        "Bilevel.ChiOuter.hierarchy_active_restricted_inverse_eq",
+        "Bilevel.ChiOuter.hierarchyInactive_restricted_inverse_eq",
+        "Bilevel.ChiHierarchyHaar.sourceCanonical_certified_reply_from_energy"
+      ]
+    },
+    {
+      "id": "ni:lem:transport",
+      "declarations": [
+        "Bilevel.EndpointTransportResponse.physicalHierarchy_restricted_inverse",
+        "Bilevel.TransportHierarchy.sourcePhysical_projection_certificate_bundle",
+        "Bilevel.TransportHierarchy.physicalObserved_state_eq_original"
+      ]
+    },
+    {
+      "id": "waI:lem:uniform-locality",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.free_middle_locality_budgets",
+        "Bilevel.ChiExtensionCalibration.wide_stochastic_witness",
+        "Bilevel.ChiHierarchyHaar.sourceCanonical_certified_reply_from_energy",
+        "Bilevel.TransportHierarchy.physicalObserved_state_eq_original",
+        "Bilevel.TransportHierarchy.exists_physical_dimension"
+      ]
+    },
+    {
+      "id": "waI:lem:signal",
+      "declarations": [
+        "Bilevel.ChiExtensionCalibration.wide_stochastic_witness",
+        "Bilevel.ChiExtensionCalibration.uniform_signal_log_rate"
+      ]
+    },
+    {
+      "id": "ni:thm:information-count",
+      "declarations": [
+        "Bilevel.ChiHierarchyHaar.capped_barrier_probability",
+        "Bilevel.ChiHierarchyHaar.expected_queries_of_source_replies",
+        "Bilevel.TransportHierarchy.physicalCapped_barrier",
+        "Bilevel.TransportHierarchy.physical_expected_property"
+      ]
+    },
+    {
+      "id": "uf:thm:lower",
+      "declarations": [
+        "Bilevel.ChiUpperNoise.upper_noise_lower",
+        "Bilevel.ChiUpperNoise.upper_noise_curvature_hardness",
+        "Bilevel.ChiHierarchyHaar.UpperNoiseRateProperty"
+      ]
+    },
+    {
+      "id": "tr:thm:quadratic",
+      "declarations": [
+        "Bilevel.TransportHierarchy.quadratic_model_hardness",
+        "Bilevel.TransportHierarchy.quadratic_conservative_hardness",
+        "Bilevel.EndpointTransportResponse.quadratic_physical_witness"
+      ]
+    },
+    {
+      "id": "tr:lem:matrix",
+      "declarations": [
+        "Bilevel.EndpointTransportMatrix.spectral_sandwich",
+        "Bilevel.EndpointTransportMatrix.inverse_last_column",
+        "Bilevel.EndpointTransportMatrix.inverse_last_last",
+        "Bilevel.EndpointTransportMatrix.inverse_first_last",
+        "Bilevel.EndpointTransportMatrix.inverse_interior_ratio",
+        "Bilevel.EndpointTransportMatrix.gamma_sq",
+        "Bilevel.EndpointTransportMatrix.gamma_sq_bounds"
+      ]
+    },
+    {
+      "id": "tr:lem:trace",
+      "declarations": [
+        "Bilevel.EndpointTransportResponse.response_endpoints",
+        "Bilevel.EndpointTransportResponse.physicalResponse_norm",
+        "Bilevel.EndpointTransportResponse.response_exact_readouts",
+        "Bilevel.EndpointTransportResponse.response_exact_bowl",
+        "Bilevel.EndpointTransportResponse.physical_outer_response"
+      ]
+    },
+    {
+      "id": "tr:lem:split-ledger",
+      "declarations": [
+        "Bilevel.PolishedSplitAllJets.bounded_selector_all_orders_unique",
+        "Bilevel.PolishedSplitAllJets.split_selector_all_orders_unique",
+        "Bilevel.PolishedSplitAllJets.split_frontier_atoms_all_orders_unique",
+        "Bilevel.PolishedSplitAllJets.physical_selector_all_orders_unique",
+        "Bilevel.PolishedSplitAllJets.physical_residual_all_orders_unique",
+        "Bilevel.ChiSplitChain.chain_jet_two_uniform",
+        "Bilevel.ChiSplitChain.chain_jet_three_uniform",
+        "Bilevel.EndpointTransportResponse.source_selected_physical_ledger",
+        "Bilevel.EndpointTransportResponse.selected_physical_frontier_ledger",
+        "Bilevel.ChiSplitFine.source_flattening_derivative_bounds",
+        "Bilevel.ChiSplitChain.actual_gradient_support",
+        "Bilevel.ChiSplitChain.carrier_source_gradient_support",
+        "Bilevel.EndpointTransportResponse.PhysicalPrefixGeometry.unfinished_release_flat"
+      ]
+    },
+    {
+      "id": "tr:lem:hybrid",
+      "declarations": [
+        "Bilevel.EndpointTransportResponse.physical_hierarchy_primitive_of_budgets",
+        "Bilevel.EndpointTransportResponse.wide_physical_witness",
+        "Bilevel.EndpointTransportResponse.wide_physical_uniform_core_witness"
+      ]
+    },
+    {
+      "id": "tr:lem:inverse-locality",
+      "declarations": [
+        "Bilevel.EndpointTransportResponse.physicalHierarchy_restricted_inverse",
+        "Bilevel.TransportHierarchy.sourcePhysical_projection_certificate_bundle",
+        "Bilevel.TransportHierarchy.physicalObserved_state_eq_original"
+      ]
+    },
+    {
+      "id": "tr:lem:serial",
+      "declarations": [
+        "Bilevel.TransportHierarchy.source_protected_iff",
+        "Bilevel.TransportHierarchy.target_protected_iff",
+        "Bilevel.TransportRound.run_prefix",
+        "Bilevel.TransportRound.future_not_protected",
+        "Bilevel.TransportRound.completed_prefix",
+        "Bilevel.TransportHierarchy.sourcePhysical_terminal_facts"
+      ]
+    },
+    {
+      "id": "dt:lem:angle",
+      "declarations": [
+        "Bilevel.TransportObserver.protected_source_angle",
+        "Bilevel.TransportObserver.protected_source_energy_update",
+        "Bilevel.TransportRound.paired_protected_failure",
+        "Bilevel.TransportEdgePosterior.forward_posterior_invariant",
+        "Bilevel.TransportEdgePosterior.reverse_posterior_invariant",
+        "Bilevel.TransportRound.actual_round_posterior"
+      ]
+    },
+    {
+      "id": "dt:lem:column",
+      "declarations": [
+        "Bilevel.PolishedBlockProjection.projection_block_bound",
+        "Bilevel.PolishedBlockProjection.frameEnergy_block_bound",
+        "Bilevel.PolishedBlockProjection.matrix_range_disclosure",
+        "Bilevel.PolishedBlockProjection.single_column_factor"
+      ]
+    },
+    {
+      "id": "dt:lem:bookkeeping",
+      "declarations": [
+        "Bilevel.PolishedTransportMaximum.actual_directed_local_global",
+        "Bilevel.PolishedTransportMaximum.simultaneous_update_maximum",
+        "Bilevel.PolishedTransportLocalSpaces.executed_batch_local_energies",
+        "Bilevel.PolishedTransportLocalSpaces.sourceReverse_energy",
+        "Bilevel.PolishedTransportLocalSpaces.partial_global_energy"
+      ]
+    },
+    {
+      "id": "dt:lem:observer",
+      "declarations": [
+        "Bilevel.PolishedTransportLocalSpaces.sourceInitial_eq_frozen",
+        "Bilevel.PolishedTransportLocalSpaces.destinationInitial_le_postGrant",
+        "Bilevel.PolishedTransportLocalSpaces.partial_global_energy",
+        "Bilevel.PolishedTransportLocalSpaces.executed_batch_local_energies",
+        "Bilevel.PolishedTransportLocalSpaces.actual_maximum_observer",
+        "Bilevel.PolishedTransportLocalSpaces.terminal_runPairs_eq",
+        "Bilevel.PolishedTransportLocalSpaces.complete_actual_maximum_observer"
+      ]
+    },
+    {
+      "id": "tr:thm:information",
+      "declarations": [
+        "Bilevel.TransportHierarchy.physicalCapped_barrier",
+        "Bilevel.TransportHierarchy.physical_expected_property",
+        "Bilevel.TransportHierarchy.physical_full_oracle_rate_witness",
+        "Bilevel.TransportHierarchy.physical_wide_model_hardness",
+        "Bilevel.ChiExtensionCalibration.deterministic_model_hardness"
+      ]
+    }
+  ],
+  "declarations": [
+    {
+      "name": "Bilevel.AcceleratedInner.scheduled_calls_bound",
+      "module": "Bilevel.AcceleratedSchedule"
+    },
+    {
+      "name": "Bilevel.CachedCurvatureRate.core_le_three_rates",
+      "module": "Bilevel.CachedCurvatureRate"
+    },
+    {
+      "name": "Bilevel.CachedParameterChoice.estimator_error_budget",
+      "module": "Bilevel.CachedParameterAssembly"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.negativeReceiver_contDiff",
+      "module": "Bilevel.ChiBoundedChainReceivers"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.payload_source_jets",
+      "module": "Bilevel.ChiBoundedChainPayloadJets"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.positiveReceiver_contDiff",
+      "module": "Bilevel.ChiBoundedChainReceivers"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.psi_contDiff",
+      "module": "Bilevel.ChiBoundedChainProfiles"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.receiverGate_contDiff",
+      "module": "Bilevel.ChiBoundedChainReceivers"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.releaseGate_contDiff",
+      "module": "Bilevel.ChiBoundedChainReceivers"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.source_local_payload_jets",
+      "module": "Bilevel.ChiBoundedChainSourceJets"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.source_payload_amplitude",
+      "module": "Bilevel.ChiBoundedChainSourceAmplitude"
+    },
+    {
+      "name": "Bilevel.ChiBoundedChain.source_uniform_eta_margins",
+      "module": "Bilevel.ChiBoundedChainUniformEta"
+    },
+    {
+      "name": "Bilevel.ChiCurvatureLower.all_gap_curvature_class_hardness",
+      "module": "Bilevel.ChiCurvatureClassTheorem"
+    },
+    {
+      "name": "Bilevel.ChiCurvatureLower.all_gap_curvature_class_minimax",
+      "module": "Bilevel.ChiCurvatureClassTheorem"
+    },
+    {
+      "name": "Bilevel.ChiExtension.radialTerm_jets",
+      "module": "Bilevel.ChiExtensionTerms"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.coarseFamily",
+      "module": "Bilevel.ChiSourceCoarseFamily"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.coarseFamily_normal_jets",
+      "module": "Bilevel.ChiSourceCoarseFamily"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.depth_linear_coefficient_absorption",
+      "module": "Bilevel.PolishedIndependentHiddenForce"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.deterministic_model_hardness",
+      "module": "Bilevel.ChiDeterministicModelTheorem"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.free_middle_locality_budgets",
+      "module": "Bilevel.PolishedUniformLocalityParameters"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.independent_coarse_energy",
+      "module": "Bilevel.PolishedIndependentHiddenForce"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.independent_hidden_force",
+      "module": "Bilevel.PolishedIndependentHiddenForce"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.independent_hidden_gradient_force",
+      "module": "Bilevel.PolishedIndependentHiddenForce"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.source_coarse_extension_jets",
+      "module": "Bilevel.ChiSourceCoarseExtension"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.source_coarse_family_ledger",
+      "module": "Bilevel.ChiSourceCoarseFamily"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.uniform_signal_log_rate",
+      "module": "Bilevel.ChiUniformSignalRate"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_deterministic_witness",
+      "module": "Bilevel.ChiUniformDeterministicWitness"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_hierarchy_extension_jets",
+      "module": "Bilevel.ChiUniformExtensionAssembly"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_inactive_extension_jets",
+      "module": "Bilevel.ChiUniformInactiveExtension"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_parameter_certificate",
+      "module": "Bilevel.ChiUniformParameterCertificate"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_radial_jets",
+      "module": "Bilevel.ChiUniformRadialBudgets"
+    },
+    {
+      "name": "Bilevel.ChiExtensionCalibration.wide_stochastic_witness",
+      "module": "Bilevel.ChiUniformStochasticWitness"
+    },
+    {
+      "name": "Bilevel.ChiFine.latent_active_force_bound",
+      "module": "Bilevel.ChiFineSourceForce"
+    },
+    {
+      "name": "Bilevel.ChiFine.latent_inactive_force_bound",
+      "module": "Bilevel.ChiFineInactiveForce"
+    },
+    {
+      "name": "Bilevel.ChiFine.source_flattening_derivative_bounds",
+      "module": "Bilevel.ChiFineScaled"
+    },
+    {
+      "name": "Bilevel.ChiFine.source_flattening_error",
+      "module": "Bilevel.ChiFineScaled"
+    },
+    {
+      "name": "Bilevel.ChiHierarchyHaar.UpperNoiseRateProperty",
+      "module": "Bilevel.ChiUpperNoiseRateProperty"
+    },
+    {
+      "name": "Bilevel.ChiHierarchyHaar.capped_barrier_probability",
+      "module": "Bilevel.ChiSourceCappedBarrier"
+    },
+    {
+      "name": "Bilevel.ChiHierarchyHaar.expected_queries_of_source_replies",
+      "module": "Bilevel.ChiSourceExpectedQueries"
+    },
+    {
+      "name": "Bilevel.ChiHierarchyHaar.sourceCanonical_certified_reply_from_energy",
+      "module": "Bilevel.ChiCanonicalSourceCertifiedReply"
+    },
+    {
+      "name": "Bilevel.ChiIndependentWidths.exists_uniform_width_calibration",
+      "module": "Bilevel.ChiUniformWidthCalibration"
+    },
+    {
+      "name": "Bilevel.ChiIndependentWidths.uniform_upper_base_certificate",
+      "module": "Bilevel.ChiUniformUpperBase"
+    },
+    {
+      "name": "Bilevel.ChiOuter.active_inactive_latent_force_bound",
+      "module": "Bilevel.ChiOuterForceBudget"
+    },
+    {
+      "name": "Bilevel.ChiOuter.hierarchyInactive_restricted_inverse_eq",
+      "module": "Bilevel.ChiHierarchyInactiveInverse"
+    },
+    {
+      "name": "Bilevel.ChiOuter.hierarchy_active_restricted_inverse_eq",
+      "module": "Bilevel.ChiHierarchyActiveInverse"
+    },
+    {
+      "name": "Bilevel.ChiOuter.hierarchy_homotopy_blind",
+      "module": "Bilevel.ChiHierarchyHomotopyConfinement"
+    },
+    {
+      "name": "Bilevel.ChiOuter.outerFinePiece_sum",
+      "module": "Bilevel.ChiOuterCarrierFineLedger"
+    },
+    {
+      "name": "Bilevel.ChiOuter.source_independent_objective_certificate",
+      "module": "Bilevel.ChiUniformOuterObjective"
+    },
+    {
+      "name": "Bilevel.ChiOuter.source_outer_coupling_jets",
+      "module": "Bilevel.ChiOuterCarrierFineCoupling"
+    },
+    {
+      "name": "Bilevel.ChiOuter.source_outer_independent_barrier",
+      "module": "Bilevel.ChiUniformOuterBarrier"
+    },
+    {
+      "name": "Bilevel.ChiOuter.source_outer_selected_fine_ledger",
+      "module": "Bilevel.ChiOuterCarrierFineLedger"
+    },
+    {
+      "name": "Bilevel.ChiOuter.wide_primitive_certificate",
+      "module": "Bilevel.ChiUniformPrimitive"
+    },
+    {
+      "name": "Bilevel.ChiRecursive.exists_source_small_parameters",
+      "module": "Bilevel.ChiRecursiveSmallness"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.estimator_bias",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.estimator_stability",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.hyperobjective_curvature",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.response_lipschitz",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.tilt_displacement",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.tilt_stability",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiResponseGeometry.zero_variation_exact",
+      "module": "Bilevel.ChiResponseGeometry"
+    },
+    {
+      "name": "Bilevel.ChiSplitChain.actual_gradient_support",
+      "module": "Bilevel.ChiSplitChainLocality"
+    },
+    {
+      "name": "Bilevel.ChiSplitChain.carrier_source_gradient_support",
+      "module": "Bilevel.ChiSplitChainLocality"
+    },
+    {
+      "name": "Bilevel.ChiSplitChain.chain_jet_three_uniform",
+      "module": "Bilevel.ChiSplitChainThird"
+    },
+    {
+      "name": "Bilevel.ChiSplitChain.chain_jet_two_uniform",
+      "module": "Bilevel.ChiSplitChainRegularity"
+    },
+    {
+      "name": "Bilevel.ChiSplitFine.source_flattening_derivative_bounds",
+      "module": "Bilevel.ChiSplitFineScaled"
+    },
+    {
+      "name": "Bilevel.ChiUpperNoise.upper_noise_curvature_hardness",
+      "module": "Bilevel.ChiUpperNoiseModelTheorem"
+    },
+    {
+      "name": "Bilevel.ChiUpperNoise.upper_noise_lower",
+      "module": "Bilevel.ChiUpperNoiseLowerTheorem"
+    },
+    {
+      "name": "Bilevel.ConditionalConfidence.confidence_finite",
+      "module": "Bilevel.ConditionalConfidenceFinite"
+    },
+    {
+      "name": "Bilevel.ConditionalConfidence.select",
+      "module": "Bilevel.ConditionalConfidence"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.gamma_sq",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.gamma_sq_bounds",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.inverse_first_last",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.inverse_interior_ratio",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.inverse_last_column",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.inverse_last_last",
+      "module": "Bilevel.EndpointTransportMatrix"
+    },
+    {
+      "name": "Bilevel.EndpointTransportMatrix.spectral_sandwich",
+      "module": "Bilevel.EndpointTransportSpectral"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.PhysicalPrefixGeometry.unfinished_release_flat",
+      "module": "Bilevel.EndpointTransportHierarchyBlind"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.physicalHierarchy_restricted_inverse",
+      "module": "Bilevel.EndpointTransportHierarchyInverse"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.physicalResponse_norm",
+      "module": "Bilevel.EndpointTransportResponse"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.physical_hierarchy_primitive_of_budgets",
+      "module": "Bilevel.EndpointTransportHierarchyPrimitive"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.physical_outer_response",
+      "module": "Bilevel.EndpointTransportOuterTrace"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.quadratic_physical_witness",
+      "module": "Bilevel.EndpointTransportQuadraticWitness"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.response_endpoints",
+      "module": "Bilevel.EndpointTransportResponse"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.response_exact_bowl",
+      "module": "Bilevel.EndpointTransportTrace"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.response_exact_readouts",
+      "module": "Bilevel.EndpointTransportTrace"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.selected_physical_frontier_ledger",
+      "module": "Bilevel.EndpointTransportFineFrontier"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.source_selected_physical_ledger",
+      "module": "Bilevel.EndpointTransportSelectedLedger"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.wide_physical_uniform_core_witness",
+      "module": "Bilevel.EndpointTransportWideUniformCoreWitness"
+    },
+    {
+      "name": "Bilevel.EndpointTransportResponse.wide_physical_witness",
+      "module": "Bilevel.EndpointTransportWideWitness"
+    },
+    {
+      "name": "Bilevel.Model.Primitive.cached_anchor_error",
+      "module": "Bilevel.CachedTiltError"
+    },
+    {
+      "name": "Bilevel.Model.Primitive.cached_pointwise_accuracy",
+      "module": "Bilevel.CachedTiltError"
+    },
+    {
+      "name": "Bilevel.Model.Primitive.gapCertificate_iff_source",
+      "module": "Bilevel.SourcePrimitive"
+    },
+    {
+      "name": "Bilevel.Model.Primitive.lower_solution_exists_unique",
+      "module": "Bilevel.ResponseExistence"
+    },
+    {
+      "name": "Bilevel.Model.Primitive.tilted_strong_convex",
+      "module": "Bilevel.ResponseExistence"
+    },
+    {
+      "name": "Bilevel.NearIdentityConfinement.exists_unit_transverse",
+      "module": "Bilevel.PolishedRadialCoefficient"
+    },
+    {
+      "name": "Bilevel.NearIdentityConfinement.source_total_radial_coefficient_bound",
+      "module": "Bilevel.PolishedRadialCoefficient"
+    },
+    {
+      "name": "Bilevel.OracleCode.denote_acceleratedSolve",
+      "module": "Bilevel.OracleCodeAccelerated"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.ConjugateOracle.sampleGradient_variance_bound",
+      "module": "Bilevel.PartialLegendreConservative"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.actual_conjugate_hessian_bounds",
+      "module": "Bilevel.PartialLegendreHessianBounds"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.hybridLower_regular",
+      "module": "Bilevel.PartialLegendreHybridRegularity"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.informative_gradient_bound",
+      "module": "Bilevel.PartialLegendreEnvelopeComparison"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.jointConjugate_eq_supremum",
+      "module": "Bilevel.PartialLegendreJoint"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.jointNormalLower_unique_response",
+      "module": "Bilevel.PartialLegendreJointResponse"
+    },
+    {
+      "name": "Bilevel.PartialLegendre.source_jointConjugate_regular",
+      "module": "Bilevel.PartialLegendreSourceRegularity"
+    },
+    {
+      "name": "Bilevel.PolishedAnnularAllJets.normalized_difference_annulus_all",
+      "module": "Bilevel.PolishedAnnularAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedAnnularAllJets.source_flatResidual_difference_annulus_all",
+      "module": "Bilevel.PolishedAnnularAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedBlockProjection.frameEnergy_block_bound",
+      "module": "Bilevel.PolishedBlockProjection"
+    },
+    {
+      "name": "Bilevel.PolishedBlockProjection.matrix_range_disclosure",
+      "module": "Bilevel.PolishedBlockProjection"
+    },
+    {
+      "name": "Bilevel.PolishedBlockProjection.projection_block_bound",
+      "module": "Bilevel.PolishedBlockProjection"
+    },
+    {
+      "name": "Bilevel.PolishedBlockProjection.single_column_factor",
+      "module": "Bilevel.PolishedBlockProjection"
+    },
+    {
+      "name": "Bilevel.PolishedBoundedAnnularAllJets.canonical_flatten_eq_literal",
+      "module": "Bilevel.PolishedBoundedAnnularAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedBoundedAnnularAllJets.flattened_difference_annulus_all",
+      "module": "Bilevel.PolishedBoundedAnnularAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedBoundedAnnularAllJets.source_flatFrontier_difference_annulus_all",
+      "module": "Bilevel.PolishedBoundedAnnularAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenCode.History.denote_sourceSelectedAlgorithm",
+      "module": "Bilevel.PolishedFrozenZeroBranch"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenCode.algorithm",
+      "module": "Bilevel.PolishedFrozenCode"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenCode.compiled_selectedAlgorithm_calls_rate_pointwise",
+      "module": "Bilevel.PolishedFrozenCalls"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenProcedure.algorithm_cost_lintegral",
+      "module": "Bilevel.PolishedFrozenCost"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenProcedure.compiled_accuracy_and_cost",
+      "module": "Bilevel.PolishedFrozenCostCompiled"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenProcedure.source_compiled_accuracy_and_cost",
+      "module": "Bilevel.PolishedFrozenModelUpperRaw"
+    },
+    {
+      "name": "Bilevel.PolishedFrozenUpper.accuracy",
+      "module": "Bilevel.PolishedFrozenUpperAccuracy"
+    },
+    {
+      "name": "Bilevel.PolishedGaussianAllDerivatives.source_profiles_all_fixed_orders_bounded",
+      "module": "Bilevel.PolishedGaussianAllDerivatives"
+    },
+    {
+      "name": "Bilevel.PolishedHierarchicalActivation.fixed_horizon_probability",
+      "module": "Bilevel.PolishedHierarchicalLower"
+    },
+    {
+      "name": "Bilevel.PolishedHierarchicalActivation.fixed_instance_expected_calls",
+      "module": "Bilevel.PolishedHierarchicalLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.Instance",
+      "module": "Bilevel.PolishedHistoryModel"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.Instance.source_frozen_curvature_upper",
+      "module": "Bilevel.PolishedFrozenCurvatureUpper"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.Instance.source_frozen_normalized_upper",
+      "module": "Bilevel.PolishedFrozenModelUpper"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.QuerySourceExecution",
+      "module": "Bilevel.PolishedHistoryQuerySource"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.QuerySourceExecution.IsConservative",
+      "module": "Bilevel.PolishedHistoryQuerySource"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.SourceExperiment",
+      "module": "Bilevel.PolishedHistorySourceExperiment"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.SourceExperiment.compiled_terminal_risk_eq",
+      "module": "Bilevel.PolishedHistorySourceCompiled"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.SourceExperiment.repairedKernel_represents",
+      "module": "Bilevel.PolishedHistorySourceExperiment"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.SourceExperiment.repaired_cost_eq_actual",
+      "module": "Bilevel.PolishedHistorySourceOperational"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.SourceMean",
+      "module": "Bilevel.PolishedHistorySourceModel"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.conditional_centered_iff_unbiased",
+      "module": "Bilevel.PolishedHistorySourceCompletion"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.conditional_moments_coarsen",
+      "module": "Bilevel.PolishedHistoryConditionalRepresentation"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.curvature_query_source_comparison",
+      "module": "Bilevel.PolishedQuerySourceComparison"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.freshSourceCost_eq",
+      "module": "Bilevel.PolishedHistoryFreshSourceRun"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.freshSourceRisk_eq",
+      "module": "Bilevel.PolishedHistoryFreshSourceRun"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.positive_history_all_gap_curvature_lower",
+      "module": "Bilevel.PolishedHistoryCurvatureLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.positive_history_curvature_three_term_lower",
+      "module": "Bilevel.PolishedHistoryCurvatureLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.positive_query_source_all_gap_curvature_lower",
+      "module": "Bilevel.PolishedHistoryQuerySourceCurvatureLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.queryPostComplexity",
+      "module": "Bilevel.PolishedHistoryQuerySource"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.source_frozen_body_normalized_upper",
+      "module": "Bilevel.PolishedHistorySourceFrozen"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.source_frozen_curvature_complexity_upper",
+      "module": "Bilevel.PolishedFrozenCurvatureUpper"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.source_frozen_general_dispatch_upper",
+      "module": "Bilevel.PolishedHistorySourceDispatch"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.source_frozen_general_upper",
+      "module": "Bilevel.PolishedHistorySourceFrozenGeneral"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.stationaryQueryExecution",
+      "module": "Bilevel.PolishedHistoryQuerySourceStationary"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.stationary_actual_source_admissible",
+      "module": "Bilevel.PolishedHistoryFreshSourceRun"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.stationary_complexity_le_history",
+      "module": "Bilevel.PolishedHistoryMinimaxLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.three_term_complexity_upper",
+      "module": "Bilevel.PolishedHistoryUpperTheorem"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.uniform_positive_history_both_lower",
+      "module": "Bilevel.PolishedHistoryMinimaxLower"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.uniform_positive_history_comparison",
+      "module": "Bilevel.PolishedHistoryJointComparison"
+    },
+    {
+      "name": "Bilevel.PolishedHistory.uniform_query_source_comparison",
+      "module": "Bilevel.PolishedQuerySourceComparison"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.prescribed_order_one_active",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.residual_all_orders_unique",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.selector_all_orders_unique",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.source_profiles_smooth",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.wrappedResidual_all_orders_unique",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.AllJets.wrappedSelector_all_orders_unique",
+      "module": "Bilevel.PolishedLiteralAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.MeanCertificate",
+      "module": "Bilevel.PolishedLiteralMeanCertificate"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.Parameters.actual_reply_eq_raw",
+      "module": "Bilevel.PolishedLiteralRawColumns"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.Parameters.outerMean_eq_actual_hyperobjective",
+      "module": "Bilevel.PolishedLiteralMicroMean"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.Parameters.upper_lower_gradient_bound",
+      "module": "Bilevel.PolishedLiteralUpperPrimitive"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.actual_mean_micro_certificate",
+      "module": "Bilevel.PolishedLiteralMicroMean"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.adjustable_literal_micro_certificate",
+      "module": "Bilevel.PolishedLiteralMicroAdjustable"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.literal_global_certificate",
+      "module": "Bilevel.PolishedLiteralGlobalCertificate"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.literal_hierarchical_mean_certificate",
+      "module": "Bilevel.PolishedLiteralMeanCertificate"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.literal_macro_certificate",
+      "module": "Bilevel.PolishedLiteralMacroCertificate"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.literal_source_amplitude_multiscale_eta",
+      "module": "Bilevel.PolishedLiteralAmplitudeEta"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.literal_source_amplitude_multiscale_eta_small",
+      "module": "Bilevel.PolishedLiteralAmplitudeEtaSmall"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.penalty_contDiff",
+      "module": "Bilevel.PolishedLiteralProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.residualTerm_sqrt_derivative",
+      "module": "Bilevel.PolishedLiteralSelectorSquareRoot"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.residual_jet_bounds",
+      "module": "Bilevel.PolishedLiteralResidualBounds"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.selector_sqrt_derivative",
+      "module": "Bilevel.PolishedLiteralSelectorSquareRoot"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.selector_uniform_jets",
+      "module": "Bilevel.PolishedLiteralSelectorJets"
+    },
+    {
+      "name": "Bilevel.PolishedLiteral.source_upper_primitive_budgets",
+      "module": "Bilevel.PolishedLiteralUpperPrimitive"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.actual_counter_reply",
+      "module": "Bilevel.PolishedLiteralObserverReply"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.actual_two_frame_observed",
+      "module": "Bilevel.PolishedLiteralObserverProbability"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.conditional_expected_calls",
+      "module": "Bilevel.PolishedLiteralExpectedLower"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.conditional_expected_calls_from_dimensions",
+      "module": "Bilevel.PolishedLiteralExpectedLower"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.conditional_fixed_horizon",
+      "module": "Bilevel.PolishedLiteralConditionalLower"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.disclosed_arrays",
+      "module": "Bilevel.PolishedLiteralObserverReply"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.flatCounts_active_prefix",
+      "module": "Bilevel.PolishedLiteralCounterArithmetic"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.flatCounts_prefix_iff",
+      "module": "Bilevel.PolishedLiteralCounterArithmetic"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.haarLoss_measurable",
+      "module": "Bilevel.PolishedLiteralHaarBorel"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.haarResponse_measurable",
+      "module": "Bilevel.PolishedLiteralHaarBorel"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.literal_source_coupling",
+      "module": "Bilevel.PolishedLiteralSourceCoupling"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.literal_two_frame_observed",
+      "module": "Bilevel.PolishedLiteralSourceObserver"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.macroSchedule_count",
+      "module": "Bilevel.PolishedLiteralPrefixSchedules"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.macro_run_same",
+      "module": "Bilevel.PolishedLiteralTwoFrameObserver"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.master_activation_sixteenth",
+      "module": "Bilevel.PolishedLiteralObserverActivation"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.master_counter_le_draws",
+      "module": "Bilevel.PolishedLiteralObserverActivation"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.micro_run_same",
+      "module": "Bilevel.PolishedLiteralTwoFrameObserver"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.originalReply_measurable",
+      "module": "Bilevel.PolishedLiteralOriginalFresh"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.originalRun_eq_virtual",
+      "module": "Bilevel.PolishedLiteralObserverCoupling"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.originalRun_first_eq_run",
+      "module": "Bilevel.PolishedLiteralOriginalFresh"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.original_lower_conditional_moments",
+      "module": "Bilevel.PolishedLiteralOriginalFresh"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.original_reply_global_potentials",
+      "module": "Bilevel.PolishedLiteralOriginalFresh"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.original_upper_conditional_moments",
+      "module": "Bilevel.PolishedLiteralOriginalFresh"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.rawOuterMean_eq_outerMean",
+      "module": "Bilevel.PolishedLiteralRawMean"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.rawOuterMean_gradient_measurable",
+      "module": "Bilevel.PolishedLiteralRawMean"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.seeded_fixed_probability",
+      "module": "Bilevel.PolishedLiteralExpectedFixed"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.source_observed_blindBox",
+      "module": "Bilevel.PolishedLiteralObserverBlindBox"
+    },
+    {
+      "name": "Bilevel.PolishedLiteralActualObserver.source_observed_terminal_prefix",
+      "module": "Bilevel.PolishedLiteralObserverTerminal"
+    },
+    {
+      "name": "Bilevel.PolishedPenaltyAllDerivatives.literal_penalty_positive_derivative_bounded",
+      "module": "Bilevel.PolishedPenaltyAllDerivatives"
+    },
+    {
+      "name": "Bilevel.PolishedReleaseAllDerivatives.source_release_all_fixed_orders_bound",
+      "module": "Bilevel.PolishedReleaseAllDerivatives"
+    },
+    {
+      "name": "Bilevel.PolishedSmoothProfiles.normal_eq_literal",
+      "module": "Bilevel.PolishedSmoothProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedSmoothProfiles.normal_profile_properties",
+      "module": "Bilevel.PolishedSmoothProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedSmoothProfiles.normal_smooth",
+      "module": "Bilevel.PolishedSmoothProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedSmoothProfiles.omega_eq_literal",
+      "module": "Bilevel.PolishedSmoothProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedSmoothProfiles.omega_smooth",
+      "module": "Bilevel.PolishedSmoothProfiles"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.bounded_selector_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.physical_prescribed_order_one_active",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.physical_residual_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.physical_selector_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.selected_atoms_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.selector_composition_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.split_frontier_atoms_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedSplitAllJets.split_selector_all_orders_unique",
+      "module": "Bilevel.PolishedSplitAllJets"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.actual_maximum_observer",
+      "module": "Bilevel.PolishedTransportLocalObserver"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.complete_actual_maximum_observer",
+      "module": "Bilevel.PolishedTransportMaximumTerminal"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.destinationInitial_le_postGrant",
+      "module": "Bilevel.PolishedTransportLocalSpaces"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.executed_batch_local_energies",
+      "module": "Bilevel.PolishedTransportLocalSpaces"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.partial_global_energy",
+      "module": "Bilevel.PolishedTransportLocalSpaces"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.sourceInitial_eq_frozen",
+      "module": "Bilevel.PolishedTransportLocalSpaces"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.sourceReverse_energy",
+      "module": "Bilevel.PolishedTransportLocalSpaces"
+    },
+    {
+      "name": "Bilevel.PolishedTransportLocalSpaces.terminal_runPairs_eq",
+      "module": "Bilevel.PolishedTransportMaximumTerminal"
+    },
+    {
+      "name": "Bilevel.PolishedTransportMaximum.actual_directed_local_global",
+      "module": "Bilevel.PolishedTransportMaximum"
+    },
+    {
+      "name": "Bilevel.PolishedTransportMaximum.simultaneous_update_maximum",
+      "module": "Bilevel.PolishedTransportMaximum"
+    },
+    {
+      "name": "Bilevel.PolishedTwoFrameProjection.source_two_frame_projection",
+      "module": "Bilevel.PolishedTwoFrameProjection"
+    },
+    {
+      "name": "Bilevel.PrimitiveGeometry.FullPrimitive.toPrimitive",
+      "module": "Bilevel.SourcePrimitive"
+    },
+    {
+      "name": "Bilevel.PrimitiveQuery.Family.RateProperty",
+      "module": "Bilevel.PrimitiveQueryFamily"
+    },
+    {
+      "name": "Bilevel.PublicRadialExtension.radialCoefficient_bound",
+      "module": "Bilevel.PublicRadialCertificate"
+    },
+    {
+      "name": "Bilevel.PublicRadialExtension.radial_formula",
+      "module": "Bilevel.PublicRadialCertificate"
+    },
+    {
+      "name": "Bilevel.PublicRadialExtension.radial_jet_bounds",
+      "module": "Bilevel.PublicRadialCertificate"
+    },
+    {
+      "name": "Bilevel.PublicRadialExtension.radial_normal_trace_gradient",
+      "module": "Bilevel.PublicRadialCertificate"
+    },
+    {
+      "name": "Bilevel.PublicRadialExtension.radial_tangential_gradient",
+      "module": "Bilevel.PublicRadialCertificate"
+    },
+    {
+      "name": "Bilevel.StatefulAccelerated.solveAfter_calls",
+      "module": "Bilevel.StatefulAcceleratedRandomInitialization"
+    },
+    {
+      "name": "Bilevel.StatefulAccelerated.solveAfter_distance",
+      "module": "Bilevel.StatefulAcceleratedRandomInitialization"
+    },
+    {
+      "name": "Bilevel.StatefulAccelerated.solveCalls_bound",
+      "module": "Bilevel.StatefulAcceleratedSolver"
+    },
+    {
+      "name": "Bilevel.StatefulConfidence.amplify_calls",
+      "module": "Bilevel.StatefulConfidence"
+    },
+    {
+      "name": "Bilevel.StatefulConfidence.amplify_confidence",
+      "module": "Bilevel.StatefulConfidence"
+    },
+    {
+      "name": "Bilevel.TransportEdgePosterior.forward_posterior_invariant",
+      "module": "Bilevel.TransportEdgePosterior"
+    },
+    {
+      "name": "Bilevel.TransportEdgePosterior.reverse_posterior_invariant",
+      "module": "Bilevel.TransportEdgePosterior"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.exists_physical_dimension",
+      "module": "Bilevel.TransportPhysicalBudget"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.physicalCapped_barrier",
+      "module": "Bilevel.TransportPhysicalCappedBarrier"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.physicalObserved_state_eq_original",
+      "module": "Bilevel.TransportPhysicalCoupling"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.physical_expected_property",
+      "module": "Bilevel.TransportPhysicalExpectedProperty"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.physical_full_oracle_rate_witness",
+      "module": "Bilevel.TransportPhysicalFullOracleRate"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.physical_wide_model_hardness",
+      "module": "Bilevel.TransportPhysicalModelTheorem"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.quadratic_conservative_hardness",
+      "module": "Bilevel.TransportQuadraticUniformModel"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.quadratic_model_hardness",
+      "module": "Bilevel.TransportQuadraticUniformModel"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.sourcePhysical_projection_certificate_bundle",
+      "module": "Bilevel.TransportHierarchySourceProjectionBundle"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.sourcePhysical_terminal_facts",
+      "module": "Bilevel.TransportHierarchySourceTerminalFacts"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.source_protected_iff",
+      "module": "Bilevel.TransportHierarchyOrdinal"
+    },
+    {
+      "name": "Bilevel.TransportHierarchy.target_protected_iff",
+      "module": "Bilevel.TransportHierarchyOrdinal"
+    },
+    {
+      "name": "Bilevel.TransportObserver.protected_source_angle",
+      "module": "Bilevel.TransportObserverProtectedAngle"
+    },
+    {
+      "name": "Bilevel.TransportObserver.protected_source_energy_update",
+      "module": "Bilevel.TransportObserverProtectedAngle"
+    },
+    {
+      "name": "Bilevel.TransportRound.actual_round_posterior",
+      "module": "Bilevel.TransportRoundPosterior"
+    },
+    {
+      "name": "Bilevel.TransportRound.completed_prefix",
+      "module": "Bilevel.TransportRoundPrefix"
+    },
+    {
+      "name": "Bilevel.TransportRound.future_not_protected",
+      "module": "Bilevel.TransportRoundPrefix"
+    },
+    {
+      "name": "Bilevel.TransportRound.paired_protected_failure",
+      "module": "Bilevel.TransportRoundAngle"
+    },
+    {
+      "name": "Bilevel.TransportRound.run_prefix",
+      "module": "Bilevel.TransportRoundPrefix"
+    },
+    {
+      "name": "Bilevel.ZeroChainSchedule.final_width_bounds",
+      "module": "Bilevel.ZeroChainSchedule"
+    },
+    {
+      "name": "Bilevel.ZeroChainSchedule.width_antitone",
+      "module": "Bilevel.ZeroChainSchedule"
+    }
+  ]
+}

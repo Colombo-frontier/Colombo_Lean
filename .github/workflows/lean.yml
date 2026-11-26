@@ -1,0 +1,74 @@
+name: Lean verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sources:
+    name: Check sources and verifier
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.projects.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Test verifier
+        run: python3 -m unittest discover -s tests -v
+      - name: Check every source inventory
+        run: python3 scripts/verify.py --static
+      - id: projects
+        name: Discover independent projects
+        run: echo "matrix=$(python3 scripts/projects.py --json)" >> "$GITHUB_OUTPUT"
+
+  verify:
+    name: Verify ${{ matrix.name }}
+    needs: sources
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.sources.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Restore pinned dependency and build cache
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          path: ${{ matrix.lake_path }}/.lake
+          key: lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-${{ github.sha }}
+          restore-keys: |
+            lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-
+      - name: Install pinned Lean and fetch Mathlib
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
+        with:
+          lake-package-directory: ${{ matrix.lake_path }}
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'auto'
+          use-github-cache: 'false'
+      - name: Build production modules and run Lean audits
+        env:
+          PROJECT: ${{ matrix.name }}
+        run: python3 scripts/verify.py --project "$PROJECT"
+      - name: Upload fresh verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: verification-${{ matrix.name }}
+          path: |
+            ${{ matrix.path }}/proof/*.log
+            ${{ matrix.path }}/proof/verification.json
+            ${{ matrix.path }}/proof/static-verification.json
+          if-no-files-found: ignore
+          retention-days: 14

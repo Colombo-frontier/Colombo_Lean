@@ -1,0 +1,23 @@
+# Dependencies and generated Lean output
+**/.lake/
+**/.tools/
+*.olean
+*.ilean
+*.trace
+*.olean.hash
+*.ilean.hash
+
+# Fresh verification output
+**/proof/*.log
+**/proof/verification.json
+**/proof/static-verification.json
+**/proof/axiom-audit.json
+
+# Local Python and editor files
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
