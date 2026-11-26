@@ -61,6 +61,26 @@ jobs:
           key: lean-project-v2-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-${{ github.sha }}
           restore-keys: |
             lean-project-v2-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-
+      - name: Check whether a project cache was restored
+        id: project-cache-layout
+        working-directory: ${{ matrix.lake_path }}
+        run: |
+          if [ -d .lake/build/lib/lean ]; then
+            echo "missing=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "missing=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Restore a compatible cache when the project cache is missing
+        if: steps.project-cache-layout.outputs.missing == 'true'
+        uses: actions/cache/restore@5a3ec84eff668545956fd18022155c47e93e2684
+        with:
+          # Read the earlier cache format only with identical project/toolchain/
+          # dependency/configuration pins. Lake still checks source freshness.
+          # The cache action above saves only .lake/build after verification.
+          path: ${{ matrix.lake_path }}/.lake
+          key: lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-${{ github.sha }}
+          restore-keys: |
+            lean-${{ runner.os }}-${{ matrix.name }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lake_path), format('{0}/lake-manifest.json', matrix.lake_path), format('{0}/lakefile.toml', matrix.lake_path)) }}-
       - name: Install pinned Lean and fetch Mathlib
         uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596
         with:

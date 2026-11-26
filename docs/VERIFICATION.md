@@ -35,3 +35,8 @@ come from Mathlib's public cache. This avoids keeping a separate multi-gigabyte
 Mathlib checkout in every project cache. The largest source trees start first,
 with at most eight project jobs running concurrently. Every project still runs
 the full build and its configured audits.
+
+When a project build cache is absent, CI can read a previously verified cache
+with exactly matching project, toolchain, dependency lock, and Lake configuration
+pins. Lake checks source freshness and the verifier reruns all audits. Successful
+runs continue to save only `.lake/build` in the current cache format.
