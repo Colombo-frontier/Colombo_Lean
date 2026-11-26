@@ -45,8 +45,11 @@ to obtain local Lipschitz regularity; continuity alone does not imply it. -/
 example (p : ℕ) (hp : 2 ≤ p) : (1 : WithTop ℕ∞) ≤ (p : WithTop ℕ∞) - 1 := by
   change ((1 : ℕ∞) : WithTop ℕ∞) ≤
     ((p : ℕ∞) : WithTop ℕ∞) - ((1 : ℕ∞) : WithTop ℕ∞)
-  rw [← WithTop.coe_sub, ← ENat.coe_sub]
-  exact WithTop.coe_le_coe.mpr (ENat.coe_le_coe.mpr (by omega))
+  rw [← WithTop.coe_sub]
+  apply WithTop.coe_le_coe.mpr
+  have hnat : 1 ≤ p - 1 := by omega
+  have hcast : ((1 : ℕ) : ℕ∞) ≤ ((p - 1 : ℕ) : ℕ∞) := ENat.coe_le_coe.mpr hnat
+  simpa only [ENat.coe_sub, ENat.coe_one] using hcast
 example (p : ℕ) (hp : 2 ≤ p) : (1 : WithTop ℕ∞) < (p : WithTop ℕ∞) := by
   apply WithTop.coe_lt_coe.mpr
   exact ENat.coe_lt_coe.mpr (by omega)
