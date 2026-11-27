@@ -4,8 +4,8 @@ Dependency licenses remain applicable. Mathlib and its transitive dependencies a
 
 The current Lean files retain their source-file copyright and attribution comments. Included license texts and notices include:
 
-- `kimi_001` geometry: [license](../problems/kimi_001/project/third_party/geometry/LICENSE) and [notice](../problems/kimi_001/project/third_party/geometry/NOTICE.md).
-- `kimi_002` Isoperimetric-derived code: [license](../problems/kimi_002/audit/provenance/isoperimetric_original/LICENSE) and [attribution](../problems/kimi_002/audit/licenses/ATTRIBUTION.md).
-- `hy4_kimi_003` SLT code: [license](../problems/hy4_kimi_003/project/SLT_LICENSE.txt).
+- `open_source_001` geometry: [license](../problems/open_source_001/project/third_party/geometry/LICENSE) and [notice](../problems/open_source_001/project/third_party/geometry/NOTICE.md).
+- `open_source_002` Isoperimetric-derived code: [license](../problems/open_source_002/audit/provenance/isoperimetric_original/LICENSE) and [attribution](../problems/open_source_002/audit/licenses/ATTRIBUTION.md).
+- `open_source_003` SLT code: [license](../problems/open_source_003/project/SLT_LICENSE.txt).
 
 License files at additional retained paths carry the same obligations for the corresponding incorporated code. License and attribution texts are legal notices, not current build or verification reports. The repository does not grant a blanket license for other code.

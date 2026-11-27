@@ -17,7 +17,7 @@ The last command verifies all projects and can require substantial time and disk
 
 Static verification checks source and configuration identity, inventory completeness, portable dependencies, and source policy. Full verification uses the pinned Lean version, compiles production modules, and runs every listed audit and statement check. Audit implementations define which declarations and transitive axioms they inspect; consult their Lean code for the precise scope. Expected foundational axioms are `propext`, `Classical.choice`, and `Quot.sound`.
 
-Theorems can have explicit mathematical premises even when the axiom audit succeeds. In particular, `kimi_002` retains Dorn premises, conditional Bilevel results retain `PrefixBarrier`, and `2610.00276` exposes lower and upper components without an unconditional shared-model minimax endpoint. A successful build does not remove these hypotheses.
+Theorems can have explicit mathematical premises even when the axiom audit succeeds. In particular, `open_source_002` retains Dorn premises, conditional Bilevel results retain `PrefixBarrier`, and `2610.00276` exposes lower and upper components without an unconditional shared-model minimax endpoint. A successful build does not remove these hypotheses.
 
 No check here certifies correspondence with an external manuscript. Statement-check filenames may retain names used by the Lean implementation; their current purpose is to check the expressions actually present in those files.
 

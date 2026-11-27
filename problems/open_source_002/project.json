@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "name": "kimi_002",
+  "name": "open_source_002",
   "title": "Deterministic Full-History Acceleration with Exact Comparison Feedback",
   "lake_project": "project",
   "lean_toolchain": "leanprover/lean4:v4.32.1",
