@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "name": "kimi_003",
+  "name": "hy4_kimi_003",
   "title": "Near-Optimal Dimension--Accuracy Complexity for Two-Point Stochastic Convex Optimization with Heavy Tails",
   "lake_project": "project",
   "lean_toolchain": "leanprover/lean4:v4.32.1",

@@ -34,7 +34,7 @@
 | [2610.22208](problems/2610.22208/) | Gradient-Hessian query tradeoffs | `v4.19.0` |
 | [kimi_001](problems/kimi_001/) | Exact-value convex optimization in matched l1 geometry | `v4.32.1` |
 | [kimi_002](problems/kimi_002/) | Full-history acceleration using exact comparisons | `v4.32.1` |
-| [kimi_003](problems/kimi_003/) | Two-point stochastic convex optimization with heavy tails | `v4.32.1` |
+| [hy4_kimi_003](problems/hy4_kimi_003/) | Two-point stochastic convex optimization with heavy tails | `v4.32.1` |
 
 ## Verification
 

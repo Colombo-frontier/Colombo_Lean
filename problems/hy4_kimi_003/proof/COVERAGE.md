@@ -1,4 +1,4 @@
-# Code coverage: kimi_003
+# Code coverage: hy4_kimi_003
 
 This guide describes the current Lean package for **Two-point stochastic convex optimization with heavy tails**. It is a map of code and verification entry points, not a claim that an external text has been formalized in full.
 
@@ -28,4 +28,4 @@ The inventory distinguishes production sources from other retained Lean files. F
 - An axiom audit establishes only the dependency conditions implemented by that audit; inspect its source for the selected declarations and allowed axioms.
 - A conditional theorem retains its premises after verification. Source hashes and file counts do not establish mathematical correspondence with an external document.
 
-Run `python scripts/verify.py --project kimi_003` from the repository root for current build and audit results. Add `--static` to run source checks without executing Lean. See the [package README](../README.md) for setup.
+Run `python scripts/verify.py --project hy4_kimi_003` from the repository root for current build and audit results. Add `--static` to run source checks without executing Lean. See the [package README](../README.md) for setup.

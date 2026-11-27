@@ -2,7 +2,7 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-Independent Lean 4 package `kimi_003` in Colombo Lean. The formal definitions and theorem types in this directory determine the mathematical scope.
+Independent Lean 4 package `hy4_kimi_003` in Colombo Lean. The formal definitions and theorem types in this directory determine the mathematical scope.
 
 ## Build configuration
 
@@ -33,13 +33,13 @@ The [code coverage guide](proof/COVERAGE.md) explains the build and audit bounda
 Install Lean through [elan](https://github.com/leanprover/elan) and Python 3.11 or later. From the repository root, run the source checks:
 
 ```sh
-python scripts/verify.py --project kimi_003 --static
+python scripts/verify.py --project hy4_kimi_003 --static
 ```
 
 To fetch the pinned Mathlib cache and build the package:
 
 ```sh
-cd problems/kimi_003/project
+cd problems/hy4_kimi_003/project
 lake exe cache get
 lake build
 ```
@@ -47,7 +47,7 @@ lake build
 For the build and configured Lean audits, run this command from the repository root:
 
 ```sh
-python scripts/verify.py --project kimi_003
+python scripts/verify.py --project hy4_kimi_003
 ```
 
 On systems where Python is named `python3`, substitute it in these commands. A static check validates source files and configuration; it does not execute Lean. Build and audit outcomes must come from a run against the current code.
